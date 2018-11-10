@@ -4,18 +4,18 @@
     "password": null,
     "database": "exampledb",
     "host": "localhost",
-    "dialect": "mysql2"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
     "database": "testdb",
     "host": "localhost",
-    "dialect": "mysql2",
+    "dialect": "mysql",
     "logging": false
   },
   "production": {
-    "use_env_variable": "mysql://g4myq7efwpxxc242:pv2ctsyv548vekjo@mna97msstjnkkp7h.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/fi3c8use3ezgnex1",
-    "dialect": "mysql2"
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
   }
 }
