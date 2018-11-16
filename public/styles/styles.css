@@ -1,3 +1,103 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  background: url("../images/spotred.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size   : cover;
+  -o-background-size     : cover;
+  background-size        : cover;
+  background-color       : lightblue;
+  font-size  : 1em;
+  width  : 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: #545756;
+  
+}
+
+#iphone,
+#back {
+text-align: center;    
+display: block;
+ margin-top: 15%; 
+ margin-left: auto;
+ margin-right: auto;
+position: relative;
+height: 300px;
+width: 200px; 
+z-index: 2;
+
+
+-webkit-animation: mymove 5s ; 
+
+
+}
+
+#spotred {
+    height: 800px;
+    width: 800px; 
+    top: -20px;
+    position: fixed;
+    opacity: .5;
+}
+
+#start{
+   border-color:  #1ED760;
+background: black;
+color:  #1ED760;
+}
+
+
+@keyframes mymove {
+from {top: -4000px;}
+to {top: 0px;}
+} 
+
+.table {
+background: black;
+color: white;
+width: 400px;    
+margin-top: -340px;
+margin-left: auto;
+margin-right: auto;
+position: relative;
+overflow: hidden;
+z-index: 1;
+display: none; 
+background: rgba(0, 0, 0, 0.5);  
+border: 10px solid #1ED760; 
+}
+
+th{
+    text-align: center;
+    width: 400px;
+
+}
+
+a {
+    color:  #1ED760;
+}
+
+
+
+button {
+    background-color: #1ED760;
+    color: white;
+}
+
+
+footer {
+    bottom: 0px; 
+    position: fixed; 
+    margin-right: auto;
+    margin-left: auto; 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: grey;
+    position: fixed;
+}
