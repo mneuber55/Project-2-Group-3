@@ -1,3 +1,24 @@
+$( document ).ready(function() {
+  console.log( "ready!" );
+  
+  
+  
+  console.log("hello world")
+  $('#table').hide();
+  
+  $( "#start" ).click(function() {
+  console.log("clicked")  
+  $("#iphone").hide();
+  $("#start").hide();
+  $(".table").show();
+  
+  
+  
+  });
+    
+
+
+
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
@@ -97,3 +118,4 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+ });
