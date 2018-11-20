@@ -3,7 +3,7 @@
 }
 
 body {
-  background: url("../images/spotred.png") no-repeat center center fixed;
+  background: url("background.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size   : cover;
   -o-background-size     : cover;
@@ -20,32 +20,27 @@ body {
 #back {
 text-align: center;    
 display: block;
- margin-top: 15%; 
- margin-left: auto;
- margin-right: auto;
+margin-top: 15%;  margin-left: auto;
+margin-right: auto;
 position: relative;
-height: 300px;
-width: 200px; 
+height: 450px;
+width: 250px; 
 z-index: 2;
+-webkit-animation: mymove 5s; 
 
-
--webkit-animation: mymove 5s ; 
-
-
-}
-
-#spotred {
-    height: 800px;
-    width: 800px; 
-    top: -20px;
-    position: fixed;
-    opacity: .5;
 }
 
 #start{
    border-color:  #1ED760;
 background: black;
-color:  #1ED760;
+color:  #1ED760;  
+z-index: 3;
+  margin-top: -200px;
+  position: fixed;
+  text-align: center;
+  margin-right: 20px;
+  margin-left: 0px;
+
 }
 
 
@@ -54,19 +49,21 @@ from {top: -4000px;}
 to {top: 0px;}
 } 
 
-.table {
+.table{
 background: black;
 color: white;
-width: 400px;    
-margin-top: -340px;
-margin-left: auto;
-margin-right: auto;
-position: relative;
-overflow: hidden;
-z-index: 1;
+width: 400px; 
+ 
+margin: auto;
+z-index: 4;
 display: none; 
 background: rgba(0, 0, 0, 0.5);  
 border: 10px solid #1ED760; 
+}
+
+#subredit-table {
+  margin-top: -520px;
+  border: 10px solid red;
 }
 
 th{
@@ -76,13 +73,13 @@ th{
 }
 
 a {
-    color:  #1ED760;
+    color:  red;
 }
 
 
 
 button {
-    background-color: #1ED760;
+    background-color: red;
     color: white;
 }
 
@@ -100,4 +97,23 @@ ul {
     padding: 0;
     background: grey;
     position: fixed;
+}
+
+
+
+
+#instructions{
+
+color: #fff; 
+width: 150px;
+text-align: center;
+margin-top: -300px;
+margin-left: 50px;
+z-index: 3;
+position: absolute;
+
+}
+
+.card{
+  height: 200px;
 }

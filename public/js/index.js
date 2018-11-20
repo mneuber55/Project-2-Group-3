@@ -1,20 +1,22 @@
 $( document ).ready(function() {
   console.log( "ready!" );
-  
+  $(".title").lettering();
   
   
   console.log("hello world")
-  $('#table').hide();
-  
+
+  $("#table").hide();
   $( "#start" ).click(function() {
   console.log("clicked")  
-  $("#iphone").hide();
+  $("#iphone").toggle("slow");
   $("#start").hide();
+
   $(".table").show();
   
   
-  
   });
+
+
     
 
 
@@ -37,13 +39,13 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getPlaylists: function() {
     return $.ajax({
       url: "api/examples",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deletePlaylists: function(id) {
     return $.ajax({
       url: "api/examples/" + id,
       type: "DELETE"
