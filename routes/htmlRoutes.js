@@ -5,17 +5,17 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Playlist.findAll({}).then(function(playlists) {
       res.render("index", {
-        msg: "Welcome!",
+        msg: "Created Playlists",
         playlists: playlists
       });
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Playlist.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.get("/playlist/:id", function(req, res) {
+    db.Playlist.findOne({ where: { id: req.params.id } }).then(function(playlistSelection) {
       res.render("example", {
-        example: dbExample
+        playlist: playlistSelection
       });
     });
   });
