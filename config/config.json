@@ -2,9 +2,10 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "exampledb",
+    "database": "playlist_db",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": 3307
   },
   "test": {
     "username": "root",
