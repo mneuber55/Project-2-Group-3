@@ -1,9 +1,8 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-
+var sampleData = require("./sampleData.js");
 var db = require("./models");
-
 var app = express();
 var PORT = process.env.PORT || 3000;
 
@@ -35,6 +34,19 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
+  for (var i=0; i<sampleData.reddits.length; i++) {
+    db.Reddit.create(
+      {
+        name: sampleData.reddits[i],
+        Playlist: {
+          name: sampleData.reddits[i]
+        }
+      }, 
+      { 
+        include: [{association: db.Reddit.hasOne(db.Playlist)}]
+      }
+    );
+  }
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
