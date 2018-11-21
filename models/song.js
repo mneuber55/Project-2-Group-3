@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-module.exports = function(sequelize, DataTypes) {
-    var Song = sequelize.define("Songs", {
-      title: DataTypes.STRING,
-      artist: DataTypes.STRING
-    });
-    return Song;
-  };
-=======
 module.exports = function (sequelize, DataTypes) {
   var Song = sequelize.define("Song", {
     title: {
@@ -58,4 +49,3 @@ module.exports = function (sequelize, DataTypes) {
 
   return Song;
 };
->>>>>>> 993ed4237229bc00b4ab7a117393ded61d1468e3
