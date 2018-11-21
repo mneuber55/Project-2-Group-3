@@ -10,7 +10,11 @@ module.exports = function(sequelize, DataTypes) {
       Playlist.hasMany(models.Song, {
         onDelete: "cascade"
       });
-    };
-  
+      Playlist.belongsTo(models.Reddit, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    }
     return Playlist;
-  };
+};

@@ -3,8 +3,17 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Playlist.findAll({}).then(function(playlists) {
+    db.Reddit.findAll({}).then(function(subreddits) {
       res.render("index", {
+        msg: "List of SubReddits",
+        subreddits: subreddits
+      });
+    });
+  });
+
+  app.get("/playlists", function(req, res) {
+    db.Playlist.findAll({}).then(function(playlists) {
+      res.render("playlists", {
         msg: "Created Playlists",
         playlists: playlists
       });
