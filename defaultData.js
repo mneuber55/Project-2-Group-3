@@ -4,17 +4,15 @@ var sampleData = {
         "r/electronicmusic",
         "r/hiphopheads",
         "r/rock",
-        "r/metal",
-        "r/classical"
+        "r/metal"
     ],
 
     playlists: [
-        "r/music",
-        "r/electronicmusic",
-        "r/hiphopheads",
-        "r/rock",
-        "r/metal",
-        "r/classical"
+        "General",
+        "Electronic",
+        "Hip Hop Heads",
+        "Rock",
+        "Metal"
     ],
 
     songs: [

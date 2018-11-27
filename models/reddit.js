@@ -5,11 +5,10 @@ module.exports = function(sequelize, DataTypes) {
     });
   
     Reddit.associate = function(models) {
-      // Associating Reddits with Playlists
-      Reddit.hasOne(models.Playlist, {
+      // When an Playlist is deleted, also delete any associated Songs
+      Reddit.hasMany(models.Song, {
         onDelete: "cascade"
       });
     };
-  
     return Reddit;
   };
