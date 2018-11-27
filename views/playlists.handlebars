@@ -1,17 +1,36 @@
 <div class="container">
   <div class="row">
     <div class="col-8 offset-2">
-      <div class="card mt-4">
+      <div id = "playlist-table" class="card mt-4">
         <div class="card-body">
-          <h5 class="card-title">Example</h5>
+          <h5 class="card-title">Playlists:</h5>
           <p>
-            <strong>ID</strong>: {{playlists.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{playlists.text}}</p>
+        
+
+
+    <table id = "table-playlist" style="width:100%">
+  <tr>
+    <th><strong>Song</strong> {{playlists.song}}</th>
+    <th><strong>Album</strong> {{playlists.album}}</th> 
+    <th><strong>Artist</strong> {{playlists.artist}}</th> 
+     <th><strong>Year</strong> {{playlists.artist}}</th> 
+  </tr>
+  <tr>
+    <td>{{playlists.song}}</td>
+    <td>{{playlists.album}}</td> 
+    <td>{{playlists.artist}}</td>
+  </tr>
+  
+</table>
+          
+           
             <a href="/">← Back To Home</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/jquery.lettering.js"></script>
+<script src="/js/index.js"></script>

@@ -16,11 +16,18 @@ body {
   
 }
 
+#spot-red {
+  height: 200px; 
+  margin-left:315px; 
+  margin-top: -160px;
+  z-index: 7; 
+}
+
 #iphone,
 #back {
 text-align: center;    
 display: block;
-margin-top: 15%;  margin-left: auto;
+margin-top: 3%;  margin-left: auto;
 margin-right: auto;
 position: relative;
 height: 450px;
@@ -36,11 +43,27 @@ background: black;
 color:  #1ED760;  
 z-index: 3;
   margin-top: -200px;
-  position: fixed;
+  position: absolute;
   text-align: center;
   margin-right: 20px;
   margin-left: 0px;
 
+}
+
+/* #instructions {
+  animation: type 10s steps(73);
+  overflow: hidden;
+  animation-delay: 5s; 
+  
+} */
+
+@keyframes type {
+  0% {
+    width:0ch;
+  }
+  100% {
+    width:73ch; 
+  }
 }
 
 
@@ -53,7 +76,6 @@ to {top: 0px;}
 background: black;
 color: white;
 width: 400px; 
- 
 margin: auto;
 z-index: 4;
 display: none; 
@@ -61,27 +83,6 @@ background: rgba(0, 0, 0, 0.5);
 border: 10px solid #1ED760; 
 }
 
-#subredit-table {
-  margin-top: -520px;
-  border: 10px solid red;
-}
-
-th{
-    text-align: center;
-    width: 400px;
-
-}
-
-a {
-    color:  red;
-}
-
-
-
-button {
-    background-color: red;
-    color: white;
-}
 
 
 footer {
@@ -100,8 +101,6 @@ ul {
 }
 
 
-
-
 #instructions{
 
 color: #fff; 
@@ -116,4 +115,117 @@ position: absolute;
 
 .card{
   height: 200px;
+}
+
+.title{
+  font-size: 100px;
+  font-weight:bold;
+  line-height: .55em;
+  margin-left: 35px;
+  margin-top: 30px;
+    
+}
+
+span[class^="char"] {
+  display: inline-block; 
+  position: relative;
+ 
+
+}
+
+.char1 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+ 
+}
+
+.char2 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+}
+
+.char3 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+}
+
+.char4 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+}
+.char5 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+}
+.char6 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+}
+.char7 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+}
+.char8 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+}
+.char9 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+  z-index: -4;
+}
+
+  
+
+.char11 {
+  color: #FF5700;
+  font-family: 'Open Sans', sans-serif; 
+  left:60px; 
+  z-index: 6; 
+}
+.char12 {
+  color: #FF5700;
+  font-family: 'Open Sans', sans-serif; 
+  left:60px;
+  z-index: 6; 
+  
+}
+.char13 {
+  color: #FF5700;
+  font-family: 'Open Sans', sans-serif; 
+  left:60px;
+  z-index: 6; 
+}
+.char14 {
+  color: #FF5700;
+  font-family: 'Open Sans', sans-serif; 
+  left:60px;
+}
+.char15 {
+  color: #FF5700;
+  font-family: 'Open Sans', sans-serif; 
+  left:60px;
+}
+.char16 {
+  color: #FF5700;
+  font-family: 'Open Sans', sans-serif; 
+  left:60px;
+}
+
+
+#home {
+  position: absolute;
+  margin-top: -450px;
+  font-size: 15px;
+}
+
+
+#playlist-table {
+  color: white; 
+  background: url("spotify.jpg") no-repeat center center fixed;
+
+}
+
+a {
+  color: black;
 }
