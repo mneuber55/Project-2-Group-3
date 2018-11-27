@@ -22,15 +22,8 @@ module.exports = function (app) {
     },
   );
 
-  function renderData(name, res) {
-    db.Song.findAll({ where: { reddit: name } }).then(function (songs) {
-      res.render("playlists", {
-        songs: songs
-      });
-    });
-  };
 
-  function getData(name, res) {
+  function getData(reddit) {
     // Reads the data in csv file
     fs.readFile('data.csv', "utf8", (err, data) => {
       if (err) throw err;
@@ -55,7 +48,7 @@ module.exports = function (app) {
                       artist: artist,
                       album: album,
                       url: url,
-                      reddit: name
+                      reddit: "r/"+reddit
                     }
                   );
                 }
@@ -66,7 +59,6 @@ module.exports = function (app) {
         }
       });
     });
-    renderData(name, res);
   };
 
   // Load index page
@@ -81,20 +73,16 @@ module.exports = function (app) {
 
 
   // Load playlist page and pass in the playlist name to search songs for
-  app.get("/playlist/r/:name", function (req, res) {
-    //kick off reddit scrape
-    //for each item in scrape, send a spotify response
-    getData(req.params.name, res);
-    //save each spotify response song, artist, album, link in database
-  });
-  
-
-  // Load playlist page and pass in the playlist name to search songs for
-  app.get("/playlist/:name", function (req, res) {
-    //kick off reddit scrape
-    //for each item in scrape, send a spotify response
-    getData(req.params.name, res);
-    //save each spotify response song, artist, album, link in database
+  app.get("/playlist/r/:reddit", function (req, res) {
+    console.log(req.params.reddit);
+    getData(req.params.reddit);
+    db.Song.findAll({ where: { reddit: "r/"+req.params.reddit } }).then(function (songs) {
+      console.log(songs);
+      res.render("playlists", {
+        reddit: req.params.reddit,
+        songs: songs
+      });
+    });
   });
 
 
