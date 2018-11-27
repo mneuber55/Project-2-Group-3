@@ -11,6 +11,8 @@ var Keys = require("./keys")
 var SpotifyWebApi = require('spotify-web-api-node');
 var spotifyApi = new SpotifyWebApi(Keys.spotify);
 
+var blob = [];
+
 // Get an access token and 'save' it using a setter
 spotifyApi.clientCredentialsGrant().then(
     function (data) {
@@ -35,19 +37,31 @@ function getData() {
                 results.data.forEach(function (object) {
                     // Uses the data stored in the objects array to search the spotify api
                     spotifyApi.searchTracks('track:' + object.song_title + ' artist:' + object.artist)
-                        .then(function (data) {
-                            // console.log(data.body.tracks.items[0])
-                            console.log(
-                                "\n" +
-                                "Title: " + data.body.tracks.items[0].name + "\n" +
-                                "Artist: " + data.body.tracks.items[0].artists[0].name + "\n" +
-                                "External URL: " + data.body.tracks.items[0].external_urls.spotify + "\n" +
-                                "Preview URL: " + data.body.tracks.items[0].preview_url + "\n" +
-                                "URI: " + data.body.tracks.items[0].uri
-                            );
-                        }, function (err) {
-                            console.log('Something went wrong!', err);
-                        }).catch()
+                        .then(
+                            function (data) {
+                                // console.log(data.body.tracks.items[0])
+                                // console.log(
+                                //     "\n" +
+                                //     "Title: " + data.body.tracks.items[0].name + "\n" +
+                                //     "Artist: " + data.body.tracks.items[0].artists[0].name + "\n" +
+                                //     "External URL: " + data.body.tracks.items[0].external_urls.spotify + "\n" +
+                                //     "Preview URL: " + data.body.tracks.items[0].preview_url + "\n" +
+                                //     "URI: " + data.body.tracks.items[0].uri
+                                // );
+                                var songObject = {
+                                    title: data.body.tracks.items[0].name,
+                                    artist: data.body.tracks.items[0].artists[0].name,
+                                    external_url: data.body.tracks.items[0].external_urls.spotify
+                                };
+                                blob.push(songObject);
+                                // console.log(songObject);
+                            },
+                            function (err) {
+                                console.log('Something went wrong!', err);
+                            })
+                        .catch(function (error) {
+                            // console.log(error);
+                        });
                 });
             }
         });
