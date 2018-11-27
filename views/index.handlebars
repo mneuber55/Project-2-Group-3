@@ -1,15 +1,37 @@
 <div id="home">
+
+  <div id="title1" class="title">
+    Spotify Reddit
+  </div>
+
+  <div class="container">
+    <div id="back">
+      <img class="responsive" id="iphone" src="images/iphone.png" alt="iPhone">
+      <div id="instructions">
+        Find your favorite music SubReddit and build up your next Spotify playlist </div>
+      <button id="start">Start</button>
+    </div>
+  </div>
+
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-          {{#each subreddits}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="http://www.reddit.com/{{this.name}}">{{this.name}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+        <div id="playlist-selector">
+          <h2>{{msg}}</h2>
+            <ul id="subreddit-list" class="list-group">
+              {{#each subreddits}}
+              <li data-id="{{this.id}}" class="list-group-item">
+                <a href="http://www.reddit.com/{{this.name}}">{{this.name}}</a>
+                <a href="/playlist/{{this.name}}"><button class="btn btn-primary float-right create-playlist">Create</button></a>
+              </li>
+              {{/each}}
+              <li class="list-group-item">OR Add your own:<input type="text" name="add-reddit" id="custom-box">
+              <button class="btn btn-success float-right create-reddit">Add</button>
+              <br>
+              <a href="https://www.reddit.com/r/Music/wiki/musicsubreddits">Browse Subreddits Here</a>
+              </li>
+            </ul>
+        </div>
       </div>
     </div>
   </div>

@@ -1,5 +1,7 @@
 .list-group-item {
   line-height: 2.5;
+  border-color: gray;
+  border-width: 1px;
 }
 
 body {
@@ -13,7 +15,12 @@ body {
   width  : 100%;
   font-family: 'Open Sans', sans-serif;
   color: #545756;
-  
+}
+
+#title1 {
+  color: #1ED760;
+  font-size: 64px;
+  font-weight: bold;
 }
 
 #iphone,
@@ -26,7 +33,7 @@ position: relative;
 height: 450px;
 width: 250px; 
 z-index: 2;
--webkit-animation: mymove 5s; 
+-webkit-animation: mymove 1.5s; 
 
 }
 
@@ -74,6 +81,7 @@ th{
 
 a {
     color:  red;
+    font-weight: 600;
 }
 
 
@@ -91,17 +99,6 @@ footer {
     margin-left: auto; 
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background: grey;
-    position: fixed;
-}
-
-
-
-
 #instructions{
 
 color: #fff; 
@@ -116,4 +113,35 @@ position: absolute;
 
 .card{
   height: 200px;
+}
+
+p {
+  margin: 100px;
+}
+
+#playlist-selector {
+  font-weight: 500;
+}
+
+.create-playlist,
+.create-reddit {
+  width: 75px;
+}
+
+h2 {
+  background-color: #343434;
+  color: #1ED760;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#custom-box {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 350px;
+}
+
+li {
+  font-weight: 600;
+  color:  red;
 }

@@ -1,7 +1,7 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-var sampleData = require("./sampleData.js");
+var defaultData = require("./defaultData.js");
 var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -24,7 +24,7 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
@@ -34,16 +34,11 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
-  for (var i=0; i<sampleData.reddits.length; i++) {
+
+  for (var i=0; i<defaultData.reddits.length; i++) {
     db.Reddit.create(
       {
-        name: sampleData.reddits[i],
-        Playlist: {
-          name: sampleData.reddits[i]
-        }
-      }, 
-      { 
-        include: [{association: db.Reddit.hasOne(db.Playlist)}]
+        name: defaultData.reddits[i]
       }
     );
   }

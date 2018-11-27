@@ -36,15 +36,17 @@ function getData() {
                     // Uses the data stored in the objects array to search the spotify api
                     spotifyApi.searchTracks('track:' + object.song_title + ' artist:' + object.artist)
                         .then(function (data) {
-                            // console.log(data.body.tracks.items[0])
+                            if (data.body.tracks.items[0]) {
                             console.log(
                                 "\n" +
                                 "Title: " + data.body.tracks.items[0].name + "\n" +
                                 "Artist: " + data.body.tracks.items[0].artists[0].name + "\n" +
+                                "Album: " + data.body.tracks.items[0].album.name + "\n" +
                                 "External URL: " + data.body.tracks.items[0].external_urls.spotify + "\n" +
                                 "Preview URL: " + data.body.tracks.items[0].preview_url + "\n" +
                                 "URI: " + data.body.tracks.items[0].uri
-                            );
+                                );                  
+                             }
                         }, function (err) {
                             console.log('Something went wrong!', err);
                         }).catch()
