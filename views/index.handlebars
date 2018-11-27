@@ -21,8 +21,8 @@
             <ul id="subreddit-list" class="list-group">
               {{#each subreddits}}
               <li data-id="{{this.id}}" class="list-group-item">
-                <a href="http://www.reddit.com/{{this.name}}">{{this.name}}</a>
-                <a href="/playlist/{{this.name}}"><button class="btn btn-primary float-right create-playlist">Create</button></a>
+                <a href="http://www.reddit.com/{{this.reddit}}">{{this.reddit}}</a>
+                <a href="/playlist/{{this.reddit}}"><button class="btn btn-primary float-right create-playlist">Create</button></a>
               </li>
               {{/each}}
               <li class="list-group-item">OR Add your own:<input type="text" name="add-reddit" id="custom-box">

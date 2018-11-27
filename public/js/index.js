@@ -5,111 +5,89 @@ $( document ).ready(function() {
   $("#table").hide();
   $("#playlist-selector").hide();
   $( "#start" ).click(function() {
-  console.log("clicked")  
+  console.log("clicked")
   $("#back").toggle("slow");
   $("#start").hide();
   $(".table").show();
   $("#playlist-selector").show("slow");
   });
 
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  refreshPlaylists: function(reddit) {
     return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getPlaylists: function() {
-    return $.ajax({
-      url: "api/examples",
+      url: "/api/playlists/"+reddit,
       type: "GET"
     });
   },
-  deletePlaylists: function(id) {
+  deleteSong: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "/api/song/"+id,
       type: "DELETE"
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+// Gets new songs from the db and repopulates the list
+var handleRefresh = function(reddit) {
+  console.log(reddit);
+  API.refreshPlaylists(reddit).then(function(data) {
+    console.log(data);
+
+    var $song = data.map(function(song) {
+    console.log($song);
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(song.title)
+        .attr("href", "/example/" + song.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": song.id
         })
         .append($a);
 
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
+        .attr("data", song.id)
         .text("ｘ");
+      
+      $li.append($button);
+
+      $button = $("<button>")
+      .addClass("btn btn-primary float-right favorite")
+      .text("Add Favorite");
 
       $li.append($button);
 
       return $li;
+      
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $("#song-list").empty();
+    $("#song-list").append($song);
+
+    $(".delete").on("click", function() {
+      console.log("CLICKED IT");
+      console.log($(this).attr("data"));
+      handleDelete($(this).attr("data"));
+    })
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+//Delete an item from the playlist and database
+var handleDelete = function(id) {
+  console.log(id);
+  API.deleteSong(id).then(function(data) {
+    console.log(data);
+    console.log("song deleted");
+    $("li[data-id="+id+"]").remove();
   });
 };
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$("#refresh-button").on("click", function() {
+  handleRefresh($("#refresh-button").attr("data"));
+})
 
 });
