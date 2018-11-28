@@ -27,7 +27,7 @@ body {
   height: 200px; 
   z-index: 8; 
   margin-right: 550px;
-  margin-top: -100px;
+  margin-top: 0px;
   
 
 }
@@ -248,6 +248,6 @@ a {
 
 }
 
-#nav{
+nav{
   z-index: 1; 
 }
