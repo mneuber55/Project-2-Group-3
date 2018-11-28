@@ -25,9 +25,11 @@ body {
 
 #spot-red {
   height: 200px; 
-  margin-left:315px; 
-  margin-top: -160px;
-  z-index: 7; 
+  z-index: 8; 
+  margin-right: 550px;
+  margin-top: -100px;
+  
+
 }
 
 #iphone,
@@ -140,83 +142,81 @@ span[class^="char"] {
 
 }
 
-.char1 {
+.char6 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
  
 }
 
-.char2 {
-  color: #1ed761;
-  font-family: Oswald, sans-serif;
-}
-
-.char3 {
-  color: #1ed761;
-  font-family: Oswald, sans-serif;
-}
-
-.char4 {
-  color: #1ed761;
-  font-family: Oswald, sans-serif;
-}
-.char5 {
-  color: #1ed761;
-  font-family: Oswald, sans-serif;
-}
-.char6 {
-  color: #1ed761;
-  font-family: Oswald, sans-serif;
-}
 .char7 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
 }
+
 .char8 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
 }
+
 .char9 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  z-index: -4;
 }
+.char10 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+  z-index: 2; 
+}
+.char11 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+  z-index: 2; 
+}
+.char12 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+  z-index: 0; 
+}
+
 
   
 
-.char11 {
+.char14 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
   left:60px; 
   z-index: 6; 
 }
-.char12 {
+.char15 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
   left:60px;
   z-index: 6; 
   
 }
-.char13 {
+.char16 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
   left:60px;
   z-index: 6; 
 }
-.char14 {
+.char17 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
   left:60px;
+  z-index: 6; 
 }
-.char15 {
+.char18 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
   left:60px;
+  z-index: 6; 
 }
-.char16 {
+.char19 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
   left:60px;
+    z-index: 6; 
 }
 
 
@@ -235,4 +235,19 @@ span[class^="char"] {
 
 a {
   color: black;
+}
+
+#subreddit-list{
+  margin-top: 300px;
+  margin-left: 200px; 
+}
+
+#refresh-button {
+  height: 50px;
+  width: 50px;
+
+}
+
+#nav{
+  z-index: 1; 
 }
