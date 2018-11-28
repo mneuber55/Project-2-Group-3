@@ -1,5 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
   var Song = sequelize.define("Song", {
+    reddit: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -27,20 +34,11 @@ module.exports = function (sequelize, DataTypes) {
       validate: {
         len: [1]
       }
-    },
-    reddit: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
     }
   });
 
   Song.associate = function(models) {
-    // We're saying that a Song should belong to an Playlist
-    // A Song can't be created without an Playlist due to the foreign key constraint
-    Song.belongsTo(models.Reddit, {
+    Song.belongsTo(models.RedditData, {
       foreignKey: {
         allowNull: false
       }
