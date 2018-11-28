@@ -4,10 +4,10 @@ import praw
 
 mydb = mysql.connector.connect(
     auth_plugin='mysql_native_password',
-    host=' 	h2cwrn74535xdazj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-    database='gvw7pe966nc47xrf',
-    user='r3fk7motovq38x7d',
-    password='r07kl17y3p4snxcg'
+    host='mna97msstjnkkp7h.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    database='fi3c8use3ezgnex1',
+    user='g4myq7efwpxxc242',
+    password='pv2ctsyv548vekjo'
 )
 
 myre = re.compile(u'('
