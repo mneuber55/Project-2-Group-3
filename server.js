@@ -34,14 +34,6 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
-
-  for (var i=0; i<defaultData.reddits.length; i++) {
-    db.Reddit.create(
-      {
-        reddit: defaultData.reddits[i]
-      }
-    );
-  }
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
