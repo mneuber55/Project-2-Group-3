@@ -1,4 +1,4 @@
-var sampleData = {
+var defaultData = {
     reddits: [
         "r/music",
         "r/electronicmusic",
@@ -23,4 +23,4 @@ var sampleData = {
     ]
 }
 
-module.exports = sampleData;
+module.exports = defaultData;
