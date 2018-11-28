@@ -1,5 +1,7 @@
 .list-group-item {
   line-height: 2.5;
+  border-color: gray;
+  border-width: 1px;
 }
 
 body {
@@ -13,7 +15,12 @@ body {
   width  : 100%;
   font-family: 'Open Sans', sans-serif;
   color: #545756;
-  
+}
+
+#title1 {
+  color: #1ED760;
+  font-size: 64px;
+  font-weight: bold;
 }
 
 #spot-red {
@@ -33,7 +40,7 @@ position: relative;
 height: 450px;
 width: 250px; 
 z-index: 2;
--webkit-animation: mymove 5s; 
+-webkit-animation: mymove 1.5s; 
 
 }
 
