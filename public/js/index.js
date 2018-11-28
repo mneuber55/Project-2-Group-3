@@ -36,10 +36,9 @@ var handleRefresh = function(reddit) {
     console.log(data);
 
     var $song = data.map(function(song) {
-    console.log($song);
       var $a = $("<a>")
-        .text(song.title)
-        .attr("href", "/example/" + song.id);
+        .text(song.song+" - "+song.artist)
+        .attr("href", song.preview_link);
 
       var $li = $("<li>")
         .attr({
@@ -51,19 +50,20 @@ var handleRefresh = function(reddit) {
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
         .attr("data", song.id)
-        .text("ｘ");
+        .text("x");
       
       $li.append($button);
 
       $button = $("<button>")
-      .addClass("btn btn-primary float-right favorite")
-      .text("Add Favorite");
+      .addClass("btn btn-success float-right spotify")
+      .attr("data", song.preview_link)
+      .text("Play in Spotify");
 
       $li.append($button);
-
       return $li;
-      
     });
+
+    console.log($song);
 
     $("#song-list").empty();
     $("#song-list").append($song);
@@ -72,6 +72,12 @@ var handleRefresh = function(reddit) {
       console.log("CLICKED IT");
       console.log($(this).attr("data"));
       handleDelete($(this).attr("data"));
+    })
+
+    $(".spotify").on("click", function() {
+      console.log("CLICKED IT");
+      console.log($(this).attr("data"));
+      window.location.href = $(this).attr("data");
     })
   });
 };

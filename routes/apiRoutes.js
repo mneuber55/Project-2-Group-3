@@ -1,13 +1,40 @@
 module.exports = function(app) {
+
+    //Set variables
+    var Spotify = require("node-spotify-api");
+    var db = require("../models");
+    require("dotenv").config();
+    var keys = require("../keys")
+    var spotify = new Spotify(keys.spotify);
+    var tables = ["music", "electronicmusic", "hiphopheads", "rock", "metal"];
+  
+    // Setup MySql
+    // =============================================================
+    var mysql = require("mysql");
+  
+    var connection = mysql.createConnection({
+      host: "localhost",
+      port: 3307,
+      user: "root",
+      password: "password",
+      database: "playlist_db"
+    });
+  
+    connection.connect(function (err) {
+      if (err) {
+        console.error("error connecting: " + err.stack);
+        return;
+      }
+      console.log("connected as id " + connection.threadId);
+    });
+  
   var db = require("../models");
 
   // Refresh a Playlist on the page
   app.get("/api/playlists/:reddit", function(req, res) {
     console.log(req.params.reddit);
-    db.Song.findAll({
-      where: { reddit: "r/"+req.params.reddit }
-    }).then(function(songs) {
-      res.json(songs);
+    connection.query("SELECT * FROM r" + req.params.reddit, function (errSql, resSql) {
+      res.json(resSql)
     });
   });
   
