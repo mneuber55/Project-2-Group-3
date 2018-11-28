@@ -12,14 +12,24 @@ module.exports = function(app) {
     // =============================================================
     var mysql = require("mysql");
   
-    var connection = mysql.createConnection({
-      host: "localhost",
-      port: 3307,
-      user: "root",
-      password: "password",
-      database: "playlist_db"
-    });
-  
+    if (config.use_env_variable) {
+      var connection = mysql.createConnection(process.env[config.use_env_variable]);
+    } else {
+      var connection = mysql.createConnection({
+        host: "localhost",
+        port: 3307,
+        user: "root",
+        password: "password",
+        database: "playlist_db"
+      });
+    }
+     // var connection = mysql.createConnection({
+    //   host: "localhost",
+    //   port: 3307,
+    //   user: "root",
+    //   password: "password",
+    //   database: "playlist_db"
+    // });
     connection.connect(function (err) {
       if (err) {
         console.error("error connecting: " + err.stack);

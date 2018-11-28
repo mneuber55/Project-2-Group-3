@@ -145,37 +145,53 @@ span[class^="char"] {
 .char6 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
+  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
+   animation: getfocusg 5.5s ease 0s  alternate;
+
+   
  
 }
 
 .char7 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
+  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
+  animation: getfocusg 5.5s ease 0s  alternate;
 }
 
 .char8 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
+  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
+  animation: getfocusg 5.5s ease 0s  alternate;
 }
 
 .char9 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
+  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
+  animation: getfocusg 5.5s ease 0s  alternate;
 }
 .char10 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
   z-index: 2; 
+  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
+  animation: getfocusg 5.5s ease 0s  alternate;
 }
 .char11 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
   z-index: 2; 
+  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
+  animation: getfocusg 5.5s ease 0s  alternate;
 }
 .char12 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
   z-index: 0; 
+  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
+  animation: getfocusg 5.5s ease 0s  alternate;
 }
 
 
@@ -184,39 +200,51 @@ span[class^="char"] {
 .char14 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
-  left:60px; 
+ 
   z-index: 6; 
+  -webkit-animation: getfocusr 5.5s ease 0s  alternate;
+  animation: getfocusr 5.5s ease 0s  alternate;
 }
 .char15 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
-  left:60px;
+  
   z-index: 6; 
+  -webkit-animation: getfocusr 5.5s ease 0s  alternate;
+  animation: getfocusr 5.5s ease 0s  alternate;
   
 }
 .char16 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
-  left:60px;
+
   z-index: 6; 
+  -webkit-animation: getfocusr 5.5s ease 0s  alternate;
+  animation: getfocusr 5.5s ease 0s  alternate;
 }
 .char17 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
-  left:60px;
+ 
   z-index: 6; 
+  -webkit-animation: getfocusr 5.5s ease 0s  alternate;
+  animation: getfocusr 5.5s ease 0s  alternate;
 }
 .char18 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
-  left:60px;
+
   z-index: 6; 
+  -webkit-animation: getfocusr 5.5s ease 0s  alternate;
+  animation: getfocusr 5.5s ease 0s  alternate;
 }
 .char19 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif; 
-  left:60px;
+ 
     z-index: 6; 
+    -webkit-animation: getfocusr 5.5s ease 0s  alternate;
+    animation: getfocusr 5.5s ease 0s  alternate;
 }
 
 
@@ -251,3 +279,75 @@ a {
 nav{
   z-index: 1; 
 }
+
+@-webkit-keyframes getfocusg {
+  from {
+       color:rgba(255,255,255,0);
+       text-shadow: 0px 0px 1em #1ed761;
+   }
+   to {
+       color:rgba(244,241,208,0.9);
+       text-shadow: 0px 0px 0.1em #1ed761;
+   }
+   
+}
+
+@-webkit-keyframes getfocusr {
+  from {
+       color:rgba(255,255,255,0);
+       text-shadow: 0px 0px 1em  #FF5700;
+   }
+   to {
+       color:rgba(244,241,208,0.9);
+       text-shadow: 0px 0px 0.1em  #FF5700;
+   }
+   
+}
+@keyframes getfocusg {
+  from {
+       color:rgba(255,255,255,0);
+       text-shadow: 0px 0px 1em #1ed761;
+   }
+   to {
+       color:rgba(244,241,208,0.9);
+       text-shadow: 0px 0px 0.1em #1ed761;
+   }
+   
+}
+
+@keyframes getfocusr {
+  from {
+       color:rgba(255,255,255,0);
+       text-shadow: 0px 0px 1em  #FF5700;
+   }
+   to {
+       color:rgba(244,241,208,0.9);
+       text-shadow: 0px 0px 0.1em  #FF5700;
+   }
+   
+}
+span{
+  position: relative;
+}
+
+#group {
+Background: black; 
+  color: white; width: 260px;
+  border: solid white 10px;
+}
+
+#names {
+
+  word-wrap: break-word;
+  overflow-wrap:break-word;
+ 
+  font-size: 35px;
+  padding: 20px;
+
+  font-family: bebas-neue, sans-serif;
+  
+  letter-spacing: .005px;
+  
+
+}
+
