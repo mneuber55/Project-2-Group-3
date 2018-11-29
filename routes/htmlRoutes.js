@@ -39,6 +39,8 @@
 module.exports = function (app) {
 
   //Set variables
+  var env = process.env.NODE_ENV || "development";
+  var config = require(__dirname + "/../config/config.json")[env];
   var Spotify = require("node-spotify-api");
   var db = require("../models");
   require("dotenv").config();
@@ -139,7 +141,6 @@ module.exports = function (app) {
   app.get("/", function (req, res) {
     db.Reddit.findAll({}).then(function (subreddits) {
       res.render("index", {
-        msg: "Create a playlist from this selection of subreddits, or enter a custom one!",
         subreddits: subreddits
       });
     });

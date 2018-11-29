@@ -1,21 +1,27 @@
+
 <div class="container">
   <div class="row">
-    <button class="btn btn-secondary float-left" id="refresh-button" data="{{this.reddit}}">Refresh List</button>
-    <div class="col-8 offset-2">
-      <div id = "playlist-table" class="card mt-4">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div id="song-selector" class="card bg-dark">
         <div class="card-body">
-            <ul id="song-list" class="list-group">
-              {{#each songs}}
-              <li data-id="{{this.id}}" class="list-group-item">
-                <a href="{{this.url}}">{{this.title}}</a>
-                <button class="btn btn-primary float-right create-playlist">Explore</button>
-              </li>
-              {{/each}}
-          </ul>
+          <div class="card-title"></div>
+          <h2>{{this.msg}}</h2>
+          <button class="btn btn-primary float-left" id="refresh-button" data="{{this.reddit}}">Refresh List</button>
         </div>
+        <ul id="song-list" class="list-group">
+          {{#each songs}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="{{this.url}}">{{this.title}}</a>
+            <button class="btn btn-primary float-right create-playlist">Explore</button>
+          </li>
+          {{/each}}
+        </ul>
       </div>
     </div>
   </div>
+  <div class="col-1"></div>
+</div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

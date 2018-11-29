@@ -1,11 +1,11 @@
 {
   "development": {
-    "username": "g4myq7efwpxxc242",
-    "password": "pv2ctsyv548vekjo",
-    "database": "fi3c8use3ezgnex1",
-    "host": "mna97msstjnkkp7h.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "password",
+    "database": "playlist_db",
+    "host": "localhost",
     "dialect": "mysql",
-    "port": 3306
+    "port": 3307
   },
   "test": {
     "username": "root",

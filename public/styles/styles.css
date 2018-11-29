@@ -7,246 +7,257 @@
 body {
   background: url("background.png") no-repeat center center fixed;
   -webkit-background-size: cover;
-  -moz-background-size   : cover;
-  -o-background-size     : cover;
-  background-size        : cover;
-  background-color       : lightblue;
-  font-size  : 1em;
-  width  : 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: lightblue;
+  font-size: 1em;
+  width: 100%;
   font-family: 'Open Sans', sans-serif;
   color: #545756;
 }
 
-#title1 {
-  color: #1ED760;
-  font-size: 64px;
-  font-weight: bold;
+.navbar {
+  z-index: 1;
+  margin-bottom: 25px;
 }
 
-#spot-red {
-  height: 200px; 
-  z-index: 8; 
-  margin-right: 550px;
-  margin-top: 0px;
-  
-
+.delete {
+  margin-left: 20px;
 }
 
-#iphone,
-#back {
-text-align: center;    
-display: block;
-margin-top: 3%;  margin-left: auto;
-margin-right: auto;
-position: relative;
-height: 450px;
-width: 250px; 
-z-index: 2;
--webkit-animation: mymove 1.5s; 
-
-}
-
-#start{
-   border-color:  #1ED760;
-background: black;
-color:  #1ED760;  
-z-index: 3;
-  margin-top: -200px;
+#reddit-guy {
+  height: 150px;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
   position: absolute;
-  text-align: center;
-  margin-right: 20px;
-  margin-left: 0px;
-
 }
 
-/* #instructions {
-  animation: type 10s steps(73);
+#reddit-guy-box {
+  height: 100px;
   overflow: hidden;
-  animation-delay: 5s; 
-  
-} */
+  position: relative;
+  width: 200px;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: .55em;
+  position: absolute;
+  left: 175px;
+}
+
+#back {
+  background-image: url("../images/iphone.png");
+  background-size: cover;
+  text-align: center;
+  display: block;
+  margin: auto;
+  position: relative;
+  width: 250px;
+  height: 475px;
+  z-index: 2;
+  -webkit-animation: mymove 1.5s;
+  overflow: auto;
+}
+
+#start {
+  border-color: #1ED760;
+  background: black;
+  color: #1ED760;
+  z-index: 3;
+  text-align: center;
+  margin: auto;
+}
 
 @keyframes type {
   0% {
-    width:0ch;
+    width: 0ch;
   }
   100% {
-    width:73ch; 
+    width: 73ch;
   }
 }
 
-
 @keyframes mymove {
-from {top: -4000px;}
-to {top: 0px;}
-} 
-
-.table{
-background: black;
-color: white;
-width: 400px; 
-margin: auto;
-z-index: 4;
-display: none; 
-background: rgba(0, 0, 0, 0.5);  
-border: 10px solid #1ED760; 
+  from {
+    top: -4000px;
+  }
+  to {
+    top: 0px;
+  }
 }
 
-
+.table {
+  background: black;
+  color: white;
+  width: 400px;
+  margin: auto;
+  z-index: 4;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  border: 10px solid #1ED760;
+}
 
 footer {
-    bottom: 0px; 
-    position: fixed; 
-    margin-right: auto;
-    margin-left: auto; 
+  bottom: 0px;
+  position: fixed;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background: grey;
-    position: fixed;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: grey;
 }
 
-
-#instructions{
-
-color: #fff; 
-width: 150px;
-text-align: center;
-margin-top: -300px;
-margin-left: 50px;
-z-index: 3;
-position: absolute;
-
+#instructions {
+  color: #fff;
+  width: 150px;
+  text-align: center;
+  margin: auto;
+  z-index: 3;
+  margin-top: 150px;
+  margin-bottom: 25px;
+  position: relative;
 }
 
-.card{
+.card {
   height: 200px;
 }
 
-.title{
-  font-size: 100px;
-  font-weight:bold;
-  line-height: .55em;
-  margin-left: 35px;
-  margin-top: 30px;
-    
-}
-
 span[class^="char"] {
-  display: inline-block; 
+  display: inline-block;
   position: relative;
- 
-
 }
 
 .char6 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
-   animation: getfocusg 5.5s ease 0s  alternate;
-
-   
- 
+  -webkit-animation: getfocusg 5.5s ease 0s alternate;
+  animation: getfocusg 5.5s ease 0s alternate;
 }
 
 .char7 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
-  animation: getfocusg 5.5s ease 0s  alternate;
+  -webkit-animation: getfocusg 5.5s ease 0s alternate;
+  animation: getfocusg 5.5s ease 0s alternate;
 }
 
 .char8 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
-  animation: getfocusg 5.5s ease 0s  alternate;
+  -webkit-animation: getfocusg 5.5s ease 0s alternate;
+  animation: getfocusg 5.5s ease 0s alternate;
 }
 
 .char9 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
-  animation: getfocusg 5.5s ease 0s  alternate;
+  -webkit-animation: getfocusg 5.5s ease 0s alternate;
+  animation: getfocusg 5.5s ease 0s alternate;
 }
+
 .char10 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  z-index: 2; 
-  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
-  animation: getfocusg 5.5s ease 0s  alternate;
+  z-index: 2;
+  -webkit-animation: getfocusg 5.5s ease 0s alternate;
+  animation: getfocusg 5.5s ease 0s alternate;
 }
+
 .char11 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  z-index: 2; 
-  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
-  animation: getfocusg 5.5s ease 0s  alternate;
+  z-index: 2;
+  -webkit-animation: getfocusg 5.5s ease 0s alternate;
+  animation: getfocusg 5.5s ease 0s alternate;
 }
+
 .char12 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  z-index: 0; 
-  -webkit-animation: getfocusg 5.5s ease 0s  alternate;
-  animation: getfocusg 5.5s ease 0s  alternate;
+  z-index: 0;
+  -webkit-animation: getfocusg 5.5s ease 0s alternate;
+  animation: getfocusg 5.5s ease 0s alternate;
 }
 
-
-  
+.char13 {
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+  z-index: 0;
+  -webkit-animation: getfocusg 5.5s ease 0s alternate;
+  animation: getfocusg 5.5s ease 0s alternate;
+}
 
 .char14 {
-  color: #FF5700;
-  font-family: 'Open Sans', sans-serif; 
- 
-  z-index: 6; 
-  -webkit-animation: getfocusr 5.5s ease 0s  alternate;
-  animation: getfocusr 5.5s ease 0s  alternate;
+  color: #1ed761;
+  font-family: Oswald, sans-serif;
+  z-index: 0;
+  -webkit-animation: getfocusg 5.5s ease 0s alternate;
+  animation: getfocusg 5.5s ease 0s alternate;
 }
+
 .char15 {
-  color: #FF5700;
-  font-family: 'Open Sans', sans-serif; 
-  
-  z-index: 6; 
-  -webkit-animation: getfocusr 5.5s ease 0s  alternate;
-  animation: getfocusr 5.5s ease 0s  alternate;
-  
+  color: #1ed761;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 6;
+  -webkit-animation: getfocusr 5.5s ease 0s alternate;
+  animation: getfocusr 5.5s ease 0s alternate;
 }
+
 .char16 {
   color: #FF5700;
-  font-family: 'Open Sans', sans-serif; 
-
-  z-index: 6; 
-  -webkit-animation: getfocusr 5.5s ease 0s  alternate;
-  animation: getfocusr 5.5s ease 0s  alternate;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 6;
+  -webkit-animation: getfocusr 5.5s ease 0s alternate;
+  animation: getfocusr 5.5s ease 0s alternate;
 }
+
 .char17 {
   color: #FF5700;
-  font-family: 'Open Sans', sans-serif; 
- 
-  z-index: 6; 
-  -webkit-animation: getfocusr 5.5s ease 0s  alternate;
-  animation: getfocusr 5.5s ease 0s  alternate;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 6;
+  -webkit-animation: getfocusr 5.5s ease 0s alternate;
+  animation: getfocusr 5.5s ease 0s alternate;
 }
+
 .char18 {
   color: #FF5700;
-  font-family: 'Open Sans', sans-serif; 
-
-  z-index: 6; 
-  -webkit-animation: getfocusr 5.5s ease 0s  alternate;
-  animation: getfocusr 5.5s ease 0s  alternate;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 6;
+  -webkit-animation: getfocusr 5.5s ease 0s alternate;
+  animation: getfocusr 5.5s ease 0s alternate;
 }
+
 .char19 {
   color: #FF5700;
-  font-family: 'Open Sans', sans-serif; 
- 
-    z-index: 6; 
-    -webkit-animation: getfocusr 5.5s ease 0s  alternate;
-    animation: getfocusr 5.5s ease 0s  alternate;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 6;
+  -webkit-animation: getfocusr 5.5s ease 0s alternate;
+  animation: getfocusr 5.5s ease 0s alternate;
 }
 
+.char20 {
+  color: #FF5700;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 6;
+  -webkit-animation: getfocusr 5.5s ease 0s alternate;
+  animation: getfocusr 5.5s ease 0s alternate;
+}
+
+.char21 {
+  color: #FF5700;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 6;
+  -webkit-animation: getfocusr 5.5s ease 0s alternate;
+  animation: getfocusr 5.5s ease 0s alternate;
+}
 
 #home {
   position: absolute;
@@ -254,100 +265,85 @@ span[class^="char"] {
   font-size: 15px;
 }
 
-
 #playlist-table {
-  color: white; 
+  color: white;
   background: url("spotify.jpg") no-repeat center center fixed;
+}
 
+h2,
+h4 {
+  color: white;
+  padding-left: 10px;
 }
 
 a {
   color: black;
 }
 
-#subreddit-list{
-  margin-top: 300px;
-  margin-left: 200px; 
-}
-
 #refresh-button {
-  height: 50px;
-  width: 50px;
-
-}
-
-nav{
-  z-index: 1; 
+margin: 10px;
 }
 
 @-webkit-keyframes getfocusg {
   from {
-       color:rgba(255,255,255,0);
-       text-shadow: 0px 0px 1em #1ed761;
-   }
-   to {
-       color:rgba(244,241,208,0.9);
-       text-shadow: 0px 0px 0.1em #1ed761;
-   }
-   
+    color: rgba(255, 255, 255, 0);
+    text-shadow: 0px 0px 1em #1ed761;
+  }
+  to {
+    color: rgba(244, 241, 208, 0.9);
+    text-shadow: 0px 0px 0.1em #1ed761;
+  }
 }
 
 @-webkit-keyframes getfocusr {
   from {
-       color:rgba(255,255,255,0);
-       text-shadow: 0px 0px 1em  #FF5700;
-   }
-   to {
-       color:rgba(244,241,208,0.9);
-       text-shadow: 0px 0px 0.1em  #FF5700;
-   }
-   
+    color: rgba(255, 255, 255, 0);
+    text-shadow: 0px 0px 1em #FF5700;
+  }
+  to {
+    color: rgba(244, 241, 208, 0.9);
+    text-shadow: 0px 0px 0.1em #FF5700;
+  }
 }
+
 @keyframes getfocusg {
   from {
-       color:rgba(255,255,255,0);
-       text-shadow: 0px 0px 1em #1ed761;
-   }
-   to {
-       color:rgba(244,241,208,0.9);
-       text-shadow: 0px 0px 0.1em #1ed761;
-   }
-   
+    color: rgba(255, 255, 255, 0);
+    text-shadow: 0px 0px 1em #1ed761;
+  }
+  to {
+    color: rgba(244, 241, 208, 0.9);
+    text-shadow: 0px 0px 0.1em #1ed761;
+  }
 }
 
 @keyframes getfocusr {
   from {
-       color:rgba(255,255,255,0);
-       text-shadow: 0px 0px 1em  #FF5700;
-   }
-   to {
-       color:rgba(244,241,208,0.9);
-       text-shadow: 0px 0px 0.1em  #FF5700;
-   }
-   
+    color: rgba(255, 255, 255, 0);
+    text-shadow: 0px 0px 1em #FF5700;
+  }
+  to {
+    color: rgba(244, 241, 208, 0.9);
+    text-shadow: 0px 0px 0.1em #FF5700;
+  }
 }
-span{
+
+span {
   position: relative;
 }
 
 #group {
-Background: black; 
-  color: white; width: 260px;
+  Background: black;
+  color: white;
+  width: 260px;
   border: solid white 10px;
 }
 
 #names {
-
   word-wrap: break-word;
-  overflow-wrap:break-word;
- 
+  overflow-wrap: break-word;
   font-size: 35px;
   padding: 20px;
-
   font-family: bebas-neue, sans-serif;
-  
   letter-spacing: .005px;
-  
-
 }
-
