@@ -49,7 +49,7 @@ var handleRefresh = function(reddit) {
         .append($a);
 
       var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
+        .addClass("btn btn-secondary float-right delete")
         .attr("data", song.id)
         .text("x");
       

@@ -1,30 +1,35 @@
-
-  <div class = "container">
-<div id = "back">
-  <img class="responsive" id="iphone" src="images/iphone.png" alt="iPhone">
-
-  <div id = "instructions">
-  Find your favorite Music SubRedit and build up your next spotify playlist </div>
-  <button id = "start">Start</button></div>
+<div class="container">
+  <div id="back" class="responsive">
+    <div id="instructions">
+      Enter your favorite subreddit to dynamically build a Spotify playlist based off the top posts - in seconds!</div>
+    <button id="start">Start</button>
+  </div>
 </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <div id="playlist-selector">
-          <h2>{{msg}}</h2>
-            <ul id="subreddit-list" class="list-group">
-              {{#each subreddits}}
-              <li data-id="{{this.id}}" class="list-group-item">
-                <a href="http://www.reddit.com/{{this.reddit}}">{{this.reddit}}</a>
-                <a href="/playlist/{{this.reddit}}"><button class="btn btn-primary float-right create-playlist">Create</button></a>
-              </li>
-              {{/each}}
-            </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div id="playlist-selector" class="card bg-dark">
+        <div class="card-body">
+          <div class="card-title"></div>
+          <h2>Select a subreddit below to begin generating a playlist.</h2>
+          <h4>Coming soon: select your own custom reddit and build on the fly!</h4>
         </div>
+        <ul id="subreddit-list" class="list-group">
+          {{#each subreddits}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="http://www.reddit.com/{{this.reddit}}">{{this.reddit}}</a>
+            <a href="/playlist/{{this.reddit}}"><button class="btn btn-success float-right create-playlist">Create</button></a>
+          </li>
+          {{/each}}
+        </ul>
       </div>
     </div>
   </div>
+  <div class="col-1"></div>
+</div>
+</div>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
