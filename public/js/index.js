@@ -1,6 +1,7 @@
 $( document ).ready(function() {
   console.log( "ready!" );
   $(".title").lettering();
+
   console.log("hello world")
   $("#table").hide();
   $("#playlist-selector").hide();
