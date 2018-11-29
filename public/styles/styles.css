@@ -39,6 +39,7 @@ body {
   overflow: hidden;
   position: relative;
   width: 200px;
+
 }
 
 .title {
@@ -116,7 +117,7 @@ ul {
 }
 
 #instructions {
-  color: #fff;
+  color: white;
   width: 150px;
   text-align: center;
   margin: auto;
@@ -128,6 +129,10 @@ ul {
 
 .card {
   height: 200px;
+  background-image: url("music.jpg");
+  background-position-x: 50%;
+  background-position-y: 50%; 
+
 }
 
 span[class^="char"] {
@@ -138,22 +143,23 @@ span[class^="char"] {
 .char6 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  -webkit-animation: getfocusg 5.5s ease 0s alternate;
-  animation: getfocusg 5.5s ease 0s alternate;
+  -webkit-animation: getfocusg 7s ease 1s alternate;
+  animation: getfocusg 7s ease 1s alternate;
+  animation: slideletters 2s; 
 }
 
 .char7 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  -webkit-animation: getfocusg 5.5s ease 0s alternate;
-  animation: getfocusg 5.5s ease 0s alternate;
+  -webkit-animation: getfocusg 5.5s ease 1.5s alternate;
+  animation: getfocusg 5.5s ease 1.5s alternate;
 }
 
 .char8 {
   color: #1ed761;
   font-family: Oswald, sans-serif;
-  -webkit-animation: getfocusg 5.5s ease 0s alternate;
-  animation: getfocusg 5.5s ease 0s alternate;
+  -webkit-animation: getfocusg 5.5s ease 0s step-start;
+  animation: getfocusg 5.5s ease 0s step-start;
 }
 
 .char9 {
@@ -207,16 +213,17 @@ span[class^="char"] {
   color: #1ed761;
   font-family: 'Open Sans', sans-serif;
   z-index: 6;
-  -webkit-animation: getfocusr 5.5s ease 0s alternate;
-  animation: getfocusr 5.5s ease 0s alternate;
+  -webkit-animation: getfocusr 5.5s ease .5s alternate;
+  animation: getfocusr 5.5s ease .5s alternate;
 }
 
 .char16 {
   color: #FF5700;
   font-family: 'Open Sans', sans-serif;
   z-index: 6;
-  -webkit-animation: getfocusr 5.5s ease 0s alternate;
-  animation: getfocusr 5.5s ease 0s alternate;
+  -webkit-animation: getfocusr 5.5s ease 1s alternate;
+  animation: getfocusr 5.5s ease 1s alternate;
+  animation: sletters 3s; 
 }
 
 .char17 {
@@ -295,6 +302,25 @@ margin: 10px;
   }
 }
 
+@keyframes slideletters {
+  from {
+    margin-right: 100%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+
+
+@keyframes sletters {
+  from {
+    margin-top: 300%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
 @-webkit-keyframes getfocusr {
   from {
     color: rgba(255, 255, 255, 0);
@@ -332,18 +358,19 @@ span {
   position: relative;
 }
 
-#group {
-  Background: black;
-  color: white;
-  width: 260px;
-  border: solid white 10px;
+
+
+
+
+.btn-success {
+  background-color: blue; 
+
 }
 
-#names {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  font-size: 35px;
-  padding: 20px;
-  font-family: bebas-neue, sans-serif;
-  letter-spacing: .005px;
-}
+footer {
+  text-align: center; 
+  background-color: grey; 
+  color: white; 
+  width: 100%; 
+  border-top: white 2px double; 
+
