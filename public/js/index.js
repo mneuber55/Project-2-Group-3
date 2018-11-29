@@ -11,6 +11,8 @@ $( document ).ready(function() {
   $("#start").hide();
   $(".table").show();
   $("#playlist-selector").show("slow");
+
+
   });
 
 
