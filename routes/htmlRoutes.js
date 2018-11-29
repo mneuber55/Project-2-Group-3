@@ -84,19 +84,10 @@ module.exports = function (app) {
     console.log("connected as id " + connection.threadId);
   });
 
-
-
-  function renderData(name, res) {
-    db.Song.findAll({ where: { reddit: name } }).then(function (songs) {
-      res.render("playlists", {
-        songs: songs
-      });
-    });
-  };
-
   // ---------/r/music scrape---------
 
   function musicParse(reddit) {
+    var counter = 1;
     connection.query("TRUNCATE TABLE r" + reddit);
     connection.query("SELECT * FROM r" + reddit + "Data", function (err, res) {
       if (err) throw err;
@@ -107,6 +98,7 @@ module.exports = function (app) {
         var noYearQuery = noSquareQuery.replace(/\(\d+\)/g, '');
         var spotifyQuery = noYearQuery.replace(" - ", " ")
         console.log(spotifyQuery);
+
         spotify.search({
           type: "track",
           query: spotifyQuery,
@@ -123,13 +115,15 @@ module.exports = function (app) {
             console.log("Preview link: " + data.tracks.items[0].external_urls.spotify);
             console.log("-------------------------");
 
-            var sql = "INSERT INTO r" + reddit + " (song, artist, album, preview_link) VALUES " + "('" +
+            var sql = "INSERT INTO r" + reddit + " (id, song, artist, album, preview_link) VALUES " + "('" +
+              counter + "', '" +  
               data.tracks.items[0].name.replace(/'/g, '').substring(0, 100) + "', '" +
               data.tracks.items[0].album.artists[0].name.replace(/'/g, '').substring(0, 100) + "', '" +
               data.tracks.items[0].album.name.replace(/'/g, '').substring(0, 100) + "', '" +
               data.tracks.items[0].external_urls.spotify.replace(/'/g, '').substring(0, 100) + "')";
             console.log(sql);
             connection.query(sql);
+            counter++;
           }
         });
       }
@@ -146,6 +140,25 @@ module.exports = function (app) {
     });
   });
 
+  // Load playlist page and pass in the playlist name to search songs for
+  app.get("/playlist/r/:reddit", function (req, res) {
+    musicParse(req.params.reddit);
+    setTimeout(function() {connection.query("SELECT * FROM r" + req.params.reddit, function (errSql, resSql) {
+      if (errSql) throw error;
+      setTimeout(function() {res.render("playlists", {
+        // reddit: req.params.reddit,
+        songs: resSql
+      })}, 1000);
+    }
+    )}, 1000);
+  });
+
+  // Render 404 page for any unmatched routes
+  app.get("*", function (req, res) {
+    res.render("404");
+  });
+
+
 
   // // Load playlist page and pass in the playlist name to search songs for
   // app.get("/playlist/r/:reddit", function (req, res) {
@@ -155,21 +168,28 @@ module.exports = function (app) {
   //   })
   // });
 
-  // Load playlist page and pass in the playlist name to search songs for
-  app.get("/playlist/r/:reddit", function (req, res) {
-    console.log(req.params.reddit);
-    musicParse(req.params.reddit);
-    db.Song.findAll({ where: { reddit: "r/" + req.params.reddit } }).then(function (songs) {
-      console.log(songs);
-      res.render("playlists", {
-        reddit: req.params.reddit,
-        songs: songs
-      });
-    });
-  });
+  // // Load playlist page and pass in the playlist name to search songs for
+  // app.get("/playlist/r/:reddit", function (req, res) {
+  //   console.log(req.params.reddit);
+  //   musicParse(req.params.reddit);
+  //   db.Song.findAll({ where: { reddit: "r/" + req.params.reddit } }).then(function (songs) {
+  //     console.log(songs);
+  //     res.render("playlists", {
+  //       reddit: req.params.reddit,
+  //       songs: songs
+  //     });
+  //   });
+  // });
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
-    res.render("404");
-  });
-};
+
+  // // Load playlist page and pass in the playlist name to search songs for
+  // app.get("/playlist/r/:reddit", function (req, res) {
+  //   console.log(req.params.reddit);
+  //   musicParse(req.params.reddit);
+  //   connection.query("SELECT * FROM r" + req.params.reddit, function (errSql, resSql) {
+  //     res.render("playlists", {
+  //       reddit: req.params.reddit,
+  //       songs: resSql
+  //     });
+  //   });
+  };
