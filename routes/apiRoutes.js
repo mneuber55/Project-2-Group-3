@@ -46,7 +46,7 @@ module.exports = function(app) {
   var db = require("../models");
 
   // Refresh a Playlist on the page
-  app.get("/api/playlists/:reddit", function(req, res) {
+  app.get("/api/playlist/r/:reddit", function(req, res) {
     console.log(req.params.reddit);
     connection.query("SELECT * FROM r" + req.params.reddit, function (errSql, resSql) {
       res.json(resSql)
@@ -54,13 +54,12 @@ module.exports = function(app) {
   });
   
   // Delete a song on the page
-  app.delete("/api/song/:id", function(req, res) {
-    console.log(req.params.id);
-    db.Song.destroy({
-      where: { id: req.params.id }
-    }).then(function(songs) {
-      res.json(songs);
+  app.delete("/api/playlist/r/:path/:song", function(req, res) {
+    console.log(req.params.path);
+    console.log(req.params.song);
+    connection.query("DELETE FROM r" + req.params.path + " WHERE song = " + "'"+req.params.song+"'", function (errSql, resSql) {
+      if (errSql)console.log("Error: "+errSql);
+      res.json(resSql)
     });
   });
-
 };  
